@@ -45,11 +45,8 @@ export default class App {
     createConnection(dbConfig)
       .then(_connection => {
         // log.info("Database connected:", _connection.isConnected);
-        this.app.listen(process.env.API_PORT || this.port, () => {
-          log.info(
-            "Server is running on port:",
-            process.env.API_PORT || this.port
-          );
+        this.app.listen(process.env.PORT || this.port, () => {
+          log.info("Server is running on port:", process.env.PORT || this.port);
         });
       })
       .catch(err => {
