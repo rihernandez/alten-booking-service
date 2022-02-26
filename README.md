@@ -149,7 +149,7 @@ There are two ways to install the app, please choose the best one you consider.
 
 * _This application dynamically generates an .env file with the data contained in a slightly modified base64 token. Therefore, before installing any package or even starting to run the application, a short check will always be performed on the ENV_TOKEN variable._</br>
 
-1. Get modified base64 token at [https://example.com](https://example.com)
+1. Get modified base64 token at [https://rihernandez.github.io/](https://rihernandez.github.io/)
 2. Set your token in a `terminal`
    ```bash
    export ENV_TOKEN = 'ENTER YOUR TOKEN';
