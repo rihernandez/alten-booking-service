@@ -1,8 +1,8 @@
 version: '3.3'
 services:
- mangyver:
-   image: mangyver-api #nombre de la imagen que hemos creado
+ alten:
+   image: alten-booking-service 
    restart: always
-   container_name: mangyver
+   container_name: alten-booking-service
    ports:
-     - '8000:0000'
+     - '3000:3000'
