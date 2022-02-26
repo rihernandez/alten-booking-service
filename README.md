@@ -215,7 +215,7 @@ Use this space to show useful examples of how a project can be used. Additional 
     - [ ] English
     - [ ] Spanish
 
-See the [open issues](https://github.com/rihernandez/alten-booking-service/issues) for a full list of proposed features (and known issues).
+You can see an online version of this app running on [Heroku](https://alten-booking-service.herokuapp.com/api/v1/docs/). keep in mind that it usually takes a long time the first time you load since the server is a free space with limitations on that platform.
 
 <p align="right"><a href="#top">back to top</a></p>
 
