@@ -1,7 +1,7 @@
 version: '3.3'
 services:
  alten:
-   image: alten-booking-service 
+   image: rhc921004/alten-booking-service
    restart: always
    container_name: alten-booking-service
    ports:

@@ -143,9 +143,7 @@ To install nvm, follow this [link](https://gist.github.com/d2s/372b5943bce17b964
 
 ### Installation
 
-There are two ways to install the app, please choose the best one you consider.
 
-#### `1 - Local instalation`
 
 * _This application dynamically generates an .env file with the data contained in a slightly modified base64 token. Therefore, before installing any package or even starting to run the application, a short check will always be performed on the ENV_TOKEN variable._</br>
 
@@ -162,43 +160,16 @@ There are two ways to install the app, please choose the best one you consider.
    ```sh
    npm install
    ```
-
-#### `2 - Docker instalation`
-
-1. Clone the repo
+4. Build application.
    ```sh
-   git clone https://github.com/rihernandez/alten-booking-service.git
+   npm run build
    ```
-2. Navigate to the root directory thought terminal and execute:
+4. Start the app.
    ```sh
-   docker-compose up -d
+   npm start
    ```
-4. If you chose to install via docker no further action is required and you can finish this installation guide. 
 5. Clic [here](http://localhost:3000/api/v1/docs) to open API documentation in the browser.
   
-
-<p align="right"><a href="#top">back to top</a></p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-  * Build the application
-  ```sh
-  npm run build
-  ```
-  * Run the application
-  ```sh
-  npm start
-  ```
-
-  * Clic [here](http://localhost:3000/api/v1/docs) to open the browser and see the [API Documentation](http://localhost:3000/api/v1/docs).
-  
-
-
 
 <p align="right"><a href="#top">back to top</a></p>
 
