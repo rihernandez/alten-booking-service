@@ -14,7 +14,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/rihernandez/alten-booking-service">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/altlogo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Alten booking service</h3>
