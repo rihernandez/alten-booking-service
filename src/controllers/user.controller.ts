@@ -14,11 +14,10 @@ import {
 export default class UserController {
   @Get("/")
   public async getUsers(
-    @Query() profile?: string,
     @Query() skip?: number,
     @Query() take?: number
   ): Promise<Array<User>> {
-    return getUsers(profile, skip, take);
+    return getUsers(skip, take);
   }
 
   @Post("/")

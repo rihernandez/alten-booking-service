@@ -12,14 +12,12 @@ export interface IUserPayload {
 }
 
 export const getUsers = async (
-  operationId?: string,
   skip?: number,
   take?: number
 ): Promise<Array<User>> => {
   const userRepository = getRepository(User);
   return userRepository.find({
     relations: ["role"],
-    // where: [{ operation: operationId }],
     skip: skip,
     take: take,
   });
@@ -54,11 +52,6 @@ export const updateUserStatus = async (
     { relations: ["role"] }
   );
   if (!user) return null;
-  if (status == "true") {
-    user.auth = "active";
-  } else {
-    user.auth = "pending";
-  }
   await userRepository.save(user);
   return user;
 };

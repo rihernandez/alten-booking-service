@@ -26,11 +26,8 @@ export class User {
   @Column({ type: "varchar", length: 200, unique: true, name: "Email" })
   email!: string;
 
-  @ManyToOne(type => Role, role => role.id)
+  @ManyToOne(() => Role, role => role.id)
   role!: Role;
-
-  @Column({ default: "active", name: "auth" })
-  auth!: string;
 
   @Column({ default: false, name: "Status" })
   isActive!: boolean;

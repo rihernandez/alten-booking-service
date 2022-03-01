@@ -3,7 +3,6 @@ import { Role } from "../models";
 import { getRepository } from "typeorm";
 
 export interface IRolePayload {
-  id: string;
   description: string;
   isActive: boolean;
   created: Date;

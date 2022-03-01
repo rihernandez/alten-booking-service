@@ -4,9 +4,11 @@ import express from "express";
 import UserRouter from "./user.router";
 import RoleRouter from "./role.router";
 import AuthRouter from "./auth.router";
+import RoomRouter from "./room.router";
+import BookingRouter from "./booking.router";
+
 import swaggerUi from "swagger-ui-express";
 import { checkJwt } from "../middlewares/checkJwt";
-// import RoleRouter from "./role.router";
 
 const router = express.Router();
 
@@ -26,8 +28,9 @@ router.use(
 
 router.use("/auth", AuthRouter);
 router.use("/users", UserRouter);
-router.use("/roles", RoleRouter);
-// router.use("/users", [checkJwt], UserRouter);
+router.use("/roles", [checkJwt], RoleRouter);
+router.use("/rooms", [checkJwt], RoomRouter);
+router.use("/booking", [checkJwt], BookingRouter);
 
 export default router;
 export { initRoute };
