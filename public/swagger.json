@@ -56,9 +56,6 @@
 					"role": {
 						"$ref": "#/components/schemas/Role"
 					},
-					"auth": {
-						"type": "string"
-					},
 					"isActive": {
 						"type": "boolean"
 					},
@@ -74,7 +71,6 @@
 					"password",
 					"email",
 					"role",
-					"auth",
 					"isActive",
 					"created"
 				],
@@ -115,9 +111,6 @@
 			},
 			"IRolePayload": {
 				"properties": {
-					"id": {
-						"type": "string"
-					},
 					"description": {
 						"type": "string"
 					},
@@ -130,10 +123,171 @@
 					}
 				},
 				"required": [
-					"id",
 					"description",
 					"isActive",
 					"created"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Room": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"floor": {
+						"type": "number",
+						"format": "double"
+					},
+					"capacity": {
+						"type": "number",
+						"format": "double"
+					},
+					"assets": {
+						"type": "string"
+					},
+					"isActive": {
+						"type": "boolean"
+					},
+					"created": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"floor",
+					"capacity",
+					"assets",
+					"isActive",
+					"created"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRoomPayload": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"floor": {
+						"type": "number",
+						"format": "double"
+					},
+					"capacity": {
+						"type": "number",
+						"format": "double"
+					},
+					"assets": {
+						"type": "string"
+					},
+					"isActive": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"name",
+					"floor",
+					"capacity",
+					"assets",
+					"isActive"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Booking": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"userId": {
+						"$ref": "#/components/schemas/User"
+					},
+					"bookingStart": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"bookingEnd": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"startHour": {
+						"type": "number",
+						"format": "double"
+					},
+					"duration": {
+						"type": "number",
+						"format": "double"
+					},
+					"purpose": {
+						"type": "string"
+					},
+					"roomId": {
+						"$ref": "#/components/schemas/Room"
+					},
+					"isActive": {
+						"type": "boolean"
+					},
+					"created": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"userId",
+					"bookingStart",
+					"bookingEnd",
+					"startHour",
+					"duration",
+					"purpose",
+					"roomId",
+					"isActive",
+					"created"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IBookingPayload": {
+				"properties": {
+					"userId": {
+						"$ref": "#/components/schemas/User"
+					},
+					"bookingStart": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"bookingEnd": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"startHour": {
+						"type": "number",
+						"format": "double"
+					},
+					"duration": {
+						"type": "number",
+						"format": "double"
+					},
+					"purpose": {
+						"type": "string"
+					},
+					"roomId": {
+						"$ref": "#/components/schemas/Room"
+					}
+				},
+				"required": [
+					"userId",
+					"bookingStart",
+					"bookingEnd",
+					"startHour",
+					"duration",
+					"purpose",
+					"roomId"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -176,14 +330,6 @@
 				],
 				"security": [],
 				"parameters": [
-					{
-						"in": "query",
-						"name": "profile",
-						"required": false,
-						"schema": {
-							"type": "string"
-						}
-					},
 					{
 						"in": "query",
 						"name": "skip",
@@ -390,6 +536,188 @@
 				},
 				"tags": [
 					"Role"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/rooms": {
+			"get": {
+				"operationId": "GetRooms",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/Room"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Room"
+				],
+				"security": [],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "CreateRoom",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Room"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Room"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IRoomPayload"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rooms/{id}": {
+			"get": {
+				"operationId": "GetRoom",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/Room"
+										}
+									],
+									"nullable": true
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Room"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/bookings": {
+			"get": {
+				"operationId": "GetBookings",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/Booking"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Booking"
+				],
+				"security": [],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "CreateBooking",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Booking"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Booking"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IBookingPayload"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/bookings/{id}": {
+			"get": {
+				"operationId": "GetBooking",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/Booking"
+										}
+									],
+									"nullable": true
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Booking"
 				],
 				"security": [],
 				"parameters": [

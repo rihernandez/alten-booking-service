@@ -26,13 +26,13 @@ export class Booking {
   bookingEnd!: Date;
 
   @Column({ name: "startHour" })
-  startHour!: Number;
+  startHour!: number;
 
   @Column({ name: "duration" })
-  duration!: Number;
+  duration!: number;
 
   @Column({ name: "purpose" })
-  purpose!: String;
+  purpose!: string;
 
   @ManyToOne(() => Room, room => room.id)
   @JoinColumn({ name: "roomId" })

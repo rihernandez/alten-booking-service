@@ -1,16 +1,15 @@
 /* eslint-disable */
-import { Booking, Room, User } from "../models";
+import { Booking, User, Room } from "../models";
 import { getRepository } from "typeorm";
 
 export interface IBookingPayload {
   userId: User;
   bookingStart: Date;
   bookingEnd: Date;
-  startHour: Number;
-  duration: Number;
-  purpose: String;
+  startHour: number;
+  duration: number;
+  purpose: string;
   roomId: Room;
-  isActive: boolean;
 }
 
 export const getBookings = async (): Promise<Array<Booking>> => {

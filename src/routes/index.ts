@@ -16,21 +16,21 @@ const initRoute = router.get("/", async (req, res) => {
   return res.redirect(`${process.env.API_VERSION}/docs`);
 });
 
-router.use(
-  `${process.env.API_VERSION}/docs`,
-  swaggerUi.serve,
-  swaggerUi.setup(undefined, {
-    swaggerOptions: {
-      url: "/swagger.json",
-    },
-  })
-);
+// router.use(
+//   `${process.env.API_VERSION}/docs`,
+//   swaggerUi.serve,
+//   swaggerUi.setup(undefined, {
+//     swaggerOptions: {
+//       url: "/swagger.json",
+//     },
+//   })
+// );
 
 router.use("/auth", AuthRouter);
 router.use("/users", UserRouter);
+router.use("/bookings", BookingRouter);
 router.use("/roles", [checkJwt], RoleRouter);
 router.use("/rooms", [checkJwt], RoomRouter);
-router.use("/booking", [checkJwt], BookingRouter);
 
 export default router;
 export { initRoute };
