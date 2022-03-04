@@ -14,6 +14,6 @@
       "test/*": ["test/*"]
     }
   },
-  "include": [ "src/**/*", "src/repositories/.repository.ts"],
+  "include": [ "src/**/*", "src/repositories/.repository.ts", "tests"],
   "exclude" : ["src/**/*.test.ts"]
 }
