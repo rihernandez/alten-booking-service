@@ -97,7 +97,7 @@ raisonnement et les problèmatiques à prendre en compte sont decrites.
 
 ### Built With
 
-For this project I used the minimun stack over Node.js, cause it really shine in building fast, scalable network applications, offering benefits in performance, faster development, and other perks. Here is a short list of all dependencies used.
+For this project I used the minimun stack over Node.js, cause it really shine in building fast, scalable network applications, offering benefits in performance, faster development, and other perks. Here is a short list of all dependencies used. All of this dependencies doesn't need to be installed manually.
 
 * [Node.js](https://nextjs.org) _(Open-source, cross-platform, back-end JavaScript runtime environment)._
 * [Express.js](https://expressjs.com) _(Back end web application framework for Node.js to build RESTFUL APIs quickly)._ 
