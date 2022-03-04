@@ -46,13 +46,13 @@ export default class Seed {
   execute = async () => {
     dotenv.config();
     createConnection(dbConfig)
-      .then(_connection => {
+      .then(async _connection => {
         log.info("Database connected:", _connection.isConnected);
-        this.seeding();
+        await this.seeding();
       })
       .catch(err => {
         log.error("Unable to connect to db", err);
-        process.exit(1);
+        process.exit(0);
       });
   };
 
@@ -65,7 +65,7 @@ export default class Seed {
       });
 
       this.users.map(async (user: any) => {
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        await new Promise(resolve => setTimeout(resolve, 600));
         await createUser(user);
       });
 

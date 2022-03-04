@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { ConnectionOptions } from "typeorm";
 import * as dotenv from "dotenv";
-import { Role, User } from "../models";
+import { Role, User, Booking, Room } from "../models";
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ const config: ConnectionOptions = {
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME || "alten-testing",
-  entities: [User, Role],
+  entities: [User, Role, Booking, Room],
   synchronize: true,
 };
 

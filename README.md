@@ -174,6 +174,54 @@ To install nvm, follow this [link](https://gist.github.com/d2s/372b5943bce17b964
 <p align="right"><a href="#top">back to top</a></p>
 
 
+<!-- USAGE -->
+## Usage
+After follow the above step you 'll be able to see a docuemntacion with endpoint and schem [here](http://localhost:3000/api/v1/docs).<br>
+if it's not the case, then here below you can find the schema for each endpoint. </br>
+
+ `/users`
+   ```sh
+   {
+    "name": "test",
+    "username": "test",
+    "password": "Qwerty04@",
+    "email": "test@gmail.com",
+    "isActive": true,
+    "created": "2022-03-05T00:09:01.105Z",
+    "role":"8fcf6c24-598a-42bc-b4b6-039606464027",
+    "label": "test"
+  },
+   ```
+ `/roles`
+   ```sh
+   {
+     "description": "application-test",
+     "isActive": true,
+     "created": "2022-03-05T00:09:00.610Z",
+   },
+   ```
+ `/rooms`
+   ```sh
+   {
+    "name": "234-PLUS",
+    "floor": 2,
+    "capacity":3,
+    "assets": "furnished"
+   }
+   ```
+ `/bookings`
+   ```sh
+  {
+    "userId": "Userxxxxx",
+    "bookingStart": "Date",
+    "bookingEnd": "Date",
+    "startHour": "number",
+    "duration": "number",
+    "purpose": "string",
+    "roomId": "Roomxxxxx"
+  }
+   ```
+
 
 <!-- ROADMAP -->
 ## Roadmap
