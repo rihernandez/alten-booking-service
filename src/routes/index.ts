@@ -29,8 +29,8 @@ const initRoute = router.get("/", async (req, res) => {
 router.use("/auth", AuthRouter);
 router.use("/users", UserRouter);
 router.use("/bookings", BookingRouter);
-router.use("/roles", [checkJwt], RoleRouter);
-router.use("/rooms", [checkJwt], RoomRouter);
+router.use("/roles", RoleRouter);
+router.use("/rooms", RoomRouter);
 
 export default router;
 export { initRoute };

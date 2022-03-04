@@ -13,10 +13,12 @@ import { createUser } from "../repositories/user.repository";
 export default class Seed {
   roles: any = [
     {
+      id: "8fcf6c24-598a-42bc-b4b6-039606464027",
       description: "application-admin",
       isActive: true,
     },
     {
+      id: "20b17202-c312-4ae5-9589-3cf4f3c5512d",
       description: "application-user",
       isActive: true,
     },
@@ -28,7 +30,7 @@ export default class Seed {
       username: "admin",
       password: "Qwerty04@",
       email: "admin@gmail.com",
-      role: 1,
+      role: "8fcf6c24-598a-42bc-b4b6-039606464027",
       isActive: true,
     },
     {
@@ -36,7 +38,7 @@ export default class Seed {
       username: "user",
       password: "Qwerty04@",
       email: "user@gmail.com",
-      role: 2,
+      role: "20b17202-c312-4ae5-9589-3cf4f3c5512d",
       isActive: true,
     },
   ];
